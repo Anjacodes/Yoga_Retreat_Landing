@@ -7,13 +7,35 @@
     <title>About the Winter Solstice Yoga Retreat</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-      </style>
-      <link href="http://fonts.cdnfonts.com/css/cocogoose" rel="stylesheet" />
+    </style>
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/cocogoose');
+    </style>
     <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="CSS/styleAbout.css">
 </head>
 <body>
     <div class="page_container">
+        <div class="mobileMenu hidden">
+            <div class="socialsCont hidden">
+                <ul>
+                    <li><a href=""><img src="images/icons/facebook.png" alt="facebook icon"></a></li>
+                    <li><a href=""><img src="images/icons/twitter.png" alt="twitter icon"></a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">My Page</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <a><img src="images/icons/close.png" alt="close button" /></a>
+            <ul>
+              <li class="hostLogo hidden"><a><img src="images/logos/logo-25.svg" alt="Host Yoga"></a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#program">Program</a></li>
+              <li><a href="#">Join</a></li>
+              <li><a href="#">Sponsor</a></li>
+              <li><a href="#">News</a></li>
+              <li><div class="campaignBtn hidden">CC Campaign</div></li>
+            </ul>
+          </div>
         <header>
           <nav>
             <a
@@ -23,6 +45,7 @@
         </header>
 
     <main class="aboutMain">
+
           <!-- HEADING SECTION -->
 
         <div id="heading" class="headingAbout">
@@ -33,8 +56,11 @@
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
               </p>
             </div>
-            <p class="pleaseContact">Please contact us per email for further questions about the Winter Solstce Yoga Retreat!<br><span class="email">anja@mail.com</span></p>
+            <p class="smallText">Please contact us per email for further questions about the Winter Solstce Yoga Retreat!<br><span class="email">anja@mail.com</span></p>
         </div>
+
+<!-- 𝙸𝙽𝙵𝙾 𝚂𝙴𝙲𝚃𝙸𝙾𝙽 -->
+
         <div id="info">
             <div class="infoText">
                 <h3>Yoga Jam</h3><br>
@@ -43,7 +69,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
             <div class="logoCont">
-                <img src="#" alt="winter solstice yoga">
+                <img src="images/logos/logo-25.svg" alt="winter solstice yoga">
             </div>
         </div>
         <div id="gallery">
@@ -52,14 +78,42 @@
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
-            <div>
-                <img src="images/yoga_sunset.jpg">
-                <img src="images/yoga_group_nature.jpg">
+            <div class="galleryCont">
+                <div class="img-overlay">
+                    <img class="galleryImg" src="images/yoga_sunset.jpg" alt="woman meditating at sunset">
+                    <div class="overlayCont"><p class="overlayText">2020<br>Winter Solstice Retreat</p> </div>
+                </div>
+                <div class="img-overlay">
+                    <img class="galleryImg" src="images/yoga_group_nature.jpg" alt="group doing yoga in beautiful natural setting">
+                    <div class="overlayCont"><p class="overlayText">2019<br>Winter Solstice Retreat</p> </div>
+                </div>
             </div>
         </div>
-        <div id="partners">
-            <h2>Hello World</h2>
+
+<!-- PARTNER SECTION -->
+        <div id="partners" class="partners partnersAbout">
+            <h3 class="h3onDark">Partners</h3>
+            <hr />
+            <ul class="partnerCont">
+                <li><img src="images/logos/logo-3.svg" alt="Partner logo"></li>
+                <li><img src="images/logos/logo-5.svg" alt="Partner logo"></li>
+                <li><img src="images/logos/logo-7.svg" alt="Partner logo"></li>
+                <li><img src="images/logos/logo-9.svg" alt="Partner logo"></li>
+                <li><img src="images/logos/logo-29.svg" alt="Partner logo"></li>
+            </ul>
         </div>
     </main>
+
+    <!-- FOOTER -->
+    <footer class="footer footerAbout">
+        <div>
+            <img class="logoBlack" src="images/logos/logo-25.svg" alt="Host Logo">
+            <img class="logoWhite hidden" src="images/logos/logo-white.png" alt="Host Logo">
+            <p class="smallText footerText">2021 Yoga Jam Winter Solstice<br>Some Rights Reserved.</p>
+            <p class="hidden smallText extraText">2021 Yoga Jam Winter Solstice. Some Rights Reserved.<br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
+        </div>
+      </footer>
+      <script src="JavScript/script.js"></script>
+    </div>
 </body>
 </html>

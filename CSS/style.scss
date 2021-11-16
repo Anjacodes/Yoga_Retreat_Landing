@@ -1,7 +1,7 @@
 // Define primary colors:
 
 $primary_1: rgb(39, 42, 49);
-$primary_2: #ec5242;
+$primary_2: rgba(236, 82, 66, 1);
 $primary_3: rgba(211, 211, 211, 1);
 $primary_4: rgba(157, 157, 157, 1);
 $primary_5: #f3f1f5;
@@ -17,12 +17,13 @@ $paragraphs: lato, sans-serif;
 
 body {
   margin: 0;
+  font-family: $paragraphs;
 }
 
 h1 {
   font-family: $headings;
   color: $primary_2;
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 45px;
 }
 
@@ -77,6 +78,10 @@ hr {
   margin-bottom: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .page_container {
   display: flex;
   flex-direction: column;
@@ -84,6 +89,44 @@ hr {
 
 .h3onDark {
   color: $primary_5;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.mobileMenu {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  height: 100vh;
+}
+
+nav > a > img {
+  height: 60px;
+  opacity: 70%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.logoCont > img {
+  width: 70%;
+}
+
+.mobileMenu > a > img {
+  float: right;
+  width: 25px;
+}
+
+.mobileMenu > ul > li {
+  margin-top: 15px;
+}
+
+.mobileMenu > ul > li > a {
+  font-size: 2rem;
+  color: $primary_4;
+  text-decoration: none;
 }
 
 // HEADER / NAV
@@ -105,13 +148,6 @@ header {
   height: auto;
 }
 
-nav > a > img {
-  height: 60px;
-  opacity: 70%;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
 nav {
   height: 25vh;
 }
@@ -126,7 +162,8 @@ main {
   align-items: center;
 }
 
-#heading {
+.headingMain,
+.headingAbout {
   border-top: 1px solid white;
   padding-left: 15px;
   padding-right: 15px;
@@ -201,6 +238,15 @@ main {
   flex: 1;
 }
 
+.partnerCont > li > img {
+  padding-right: 20px;
+}
+
+.teacherCont > p {
+  font-size: 0.7rem;
+  margin-top: 5px;
+}
+
 #program > ul > li > img {
   height: 40px;
   padding-right: 15px;
@@ -245,6 +291,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
+  row-gap: 20px;
 }
 
 #teachers > ul > li {
@@ -260,16 +307,6 @@ main {
 .teacherCont {
   display: flex;
   flex-direction: column;
-}
-
-.teacherCont > h4 {
-  color: $primary_1;
-  margin-bottom: 7px;
-}
-
-.teacherCont > p {
-  font-size: 0.7rem;
-  margin-top: 5px;
 }
 
 // FOOTER
@@ -295,9 +332,9 @@ footer > p > span {
   padding: 20px 15px;
 }
 
-.pleaseContact {
+.smallText {
   color: $primary_1;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   margin-top: 20px;
   margin-left: 50px;
   margin-right: 50px;
@@ -334,24 +371,344 @@ footer > p > span {
 #gallery {
   background-color: white;
   padding-top: 40px;
+  padding-bottom: 40px;
   border-top: 1px solid $primary_3;
+  width: 100%;
 }
 
 .galleryText {
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
+  margin: 0 50px 50px 50px;
 }
 
-#gallery > div > img {
+.galleryImg {
+  display: block;
   width: 80%;
+  height: auto;
+}
+
+.img-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  align-self: center;
   margin-bottom: 10px;
+}
+
+.overlayCont {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  background-color: rgba(236, 82, 66, 0.5);
+}
+
+.overlayText {
+  margin-top: 20%;
+  color: $primary_5;
 }
 
 // PARTNERS
 
-#partners {
+.partners {
   background-color: $primary_1;
-  height: 150px;
   width: 100%;
+  padding-top: 15px;
+}
+
+.partnerCont {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+// FOOTER
+
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footerText {
+  margin: 0;
+  padding-left: 20px;
+}
+
+// ---------  MEDIA QUERIES ------------
+
+@media screen and (max-width: 768px) {
+  #teachers > ul > .hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .page_container {
+    width: 100vw;
+  }
+
+  .socialsCont {
+    display: block;
+    background-color: $primary_1;
+    opacity: 0.8;
+  }
+
+  .socialsCont > ul {
+    display: flex;
+    margin: 0;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 120px;
+    padding-bottom: 5px;
+  }
+
+  .socialsCont > ul > li {
+    margin-left: 20px;
+  }
+
+  nav > a {
+    display: none;
+  }
+
+  .mobileMenu > a {
+    display: none;
+  }
+
+  .socialsCont > ul > li > a {
+    color: $primary_5;
+    font-size: 0.8rem;
+  }
+
+  .footer > img {
+    margin-right: 30px;
+  }
+
+  .logoCont > img {
+    margin-top: 50px;
+  }
+
+  .footerAbout > div > img {
+    margin-right: 30px;
+  }
+
+  .socialsCont > ul > li > a > img {
+    height: 20px;
+    padding-top: 3px;
+  }
+
+  header {
+    margin-top: 120px;
+  }
+
+  .greeting {
+    display: block;
+    color: $primary_2;
+    margin-left: 120px;
+    font-size: 2rem;
+  }
+
+  .headingMain {
+    width: 60%;
+    align-self: flex-start;
+    padding-left: 120px;
+    height: 75vh;
+  }
+
+  #heading > h1 {
+    margin-top: 15px;
+  }
+
+  #heading > h2 {
+    margin-top: 35px;
+  }
+
+  #heading > h3 {
+    display: none;
+  }
+
+  .hostLogo {
+    display: block;
+    float: left;
+    margin-right: 100px;
+  }
+
+  .campaignBtn {
+    display: block;
+    border: 2px solid $primary_2;
+    color: $primary_2;
+    padding: 7px 10px;
+  }
+
+  .mobileMenu {
+    display: block;
+    position: fixed;
+    margin: 0;
+    width: 100vw;
+    z-index: 10;
+    opacity: 0.9;
+    height: auto;
+  }
+
+  .mobileMenu > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 25px;
+    margin: 0;
+  }
+
+  .mobileMenu > ul > li > a {
+    font-size: 0.9rem;
+  }
+
+  #program > ul {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: auto;
+    padding-right: 120px;
+    padding-left: 120px;
+  }
+
+  #program > ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 15px;
+  }
+
+  .teacherCont > h4 {
+    color: $primary_1;
+    margin-bottom: 7px;
+  }
+
+  #program > ul > li > h4 {
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #program > ul > li > p {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  #program > ul > li > img {
+    padding-right: 0;
+  }
+
+  .joinBtn {
+    display: none;
+  }
+
+  .seeProgram {
+    display: block;
+    color: $primary_5;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    text-decoration: underline;
+  }
+
+  #teachers > ul {
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 50px;
+    column-gap: 20px;
+  }
+
+  .more {
+    display: none;
+  }
+
+  .partners {
+    display: block;
+  }
+
+  .partnerCont {
+    padding-bottom: 30px;
+  }
+
+  .footer {
+    width: 100vw;
+    background-color: $primary_5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 120px;
+    margin-left: 0;
+  }
+
+  .headingAbout {
+    align-self: center;
+    padding: 0 120px 100px 120px;
+  }
+
+  #info {
+    width: 100vw;
+    padding-right: 120px;
+    padding-left: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoCont {
+    width: 50%;
+  }
+
+  #gallery {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .galleryCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-overlay {
+    flex: 1;
+  }
+
+  .partnersAbout {
+    display: none;
+  }
+
+  .footerAbout {
+    padding: 0 120px;
+    background-color: $primary_1;
+  }
+
+  .footerAbout .footerText {
+    display: none;
+  }
+
+  .extraText {
+    display: block;
+    color: $primary_5;
+  }
+
+  .logoBlack {
+    display: none;
+  }
+
+  .logoWhite {
+    display: block;
+  }
 }

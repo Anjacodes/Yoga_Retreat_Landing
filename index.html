@@ -8,12 +8,35 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
     </style>
-    <link href="http://fonts.cdnfonts.com/css/cocogoose" rel="stylesheet" />
+    <style>
+      @import url("http://fonts.cdnfonts.com/css/cocogoose");
+    </style>
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/styleHome.css" />
   </head>
   <body>
     <div class="page_container">
+      <div class="mobileMenu hidden">
+        <div class="socialsCont hidden">
+          <ul>
+              <li><a href=""><img src="images/icons/facebook.png" alt="facebook icon"></a></li>
+              <li><a href=""><img src="images/icons/twitter.png" alt="twitter icon"></a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">My Page</a></li>
+              <li><a href="#">Logout</a></li>
+          </ul>
+      </div>
+        <a><img src="images/icons/close.png" alt="close button" /></a>
+        <ul>
+          <li class="hostLogo hidden"><a><img src="images/logos/logo-25.svg" alt="Host Yoga"></a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#program">Program</a></li>
+          <li><a href="#">Join</a></li>
+          <li><a href="#">Sponsor</a></li>
+          <li><a href="#">News</a></li>
+          <li><div class="campaignBtn hidden">CC Campaign</div></li>
+        </ul>
+      </div>
       <header>
         <img
           class="backgroundImage"
@@ -25,12 +48,13 @@
             ><img src="images/icons/menu_icon.png" alt="collapsable menu icon"
           /></a>
         </nav>
+        <h3 class="greeting hidden">Hello, Yogis!</h3>
       </header>
 
       <main>
         <!-- HEADING SECTION -->
 
-        <div id="heading">
+        <div id="heading" class="headingMain">
           <h3>Hello, Yogis!</h3>
           <h1>WINTER SOLSTICE YOGA RETREAT 2021</h1>
           <div>
@@ -90,7 +114,8 @@
               </p>
             </li>
           </ul>
-          <a class="joinBtn" type="button">Join Winter Solstice Retreat 2021</a>
+          <a href="#" class="joinBtn">Join Winter Solstice Retreat 2021</a>
+          <a class="seeProgram hidden">SEE THE WHOLE PROGRAM</a>
         </div>
 
         <!-- TEACHERS SECTION-->
@@ -116,15 +141,47 @@
                 </p>
               </div>
             </li>
-          </ul>
-          <ul>
             <li>
               <img
                 src="images/yoga_man_square.jpg"
                 alt="Female Yoga Teacher meditating"
               />
               <div class="teacherCont">
-                <h4>Jane Doe</h4>
+                <h4>John Doe</h4>
+                <h5>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient.
+                </p>
+              </div>
+            </li>
+            <li class="hidden">
+              <img
+                src="images/massage_square.jpg"
+                alt="Female Yoga Teacher meditating"
+              />
+              <div class="teacherCont">
+                <h4>Levi Smith</h4>
+                <h5>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                </h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient.
+                </p>
+              </div>
+            </li>
+            <li class="hidden">
+              <img
+                src="images/chef_square.jpg"
+                alt="Female Yoga Teacher meditating"
+              />
+              <div class="teacherCont">
+                <h4>Amy Meyer</h4>
                 <h5>
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                 </h5>
@@ -139,6 +196,20 @@
         </div>
       </main>
 
+      <!-- PARTNERS -->
+
+      <div id="partners" class="partners hidden">
+        <h3 class="h3onDark">Partners</h3>
+        <hr />
+        <ul class="partnerCont">
+            <li><img src="images/logos/logo-3.svg" alt="Partner logo"></li>
+            <li><img src="images/logos/logo-5.svg" alt="Partner logo"></li>
+            <li><img src="images/logos/logo-7.svg" alt="Partner logo"></li>
+            <li><img src="images/logos/logo-9.svg" alt="Partner logo"></li>
+            <li><img src="images/logos/logo-29.svg" alt="Partner logo"></li>
+        </ul>
+    </div>
+
       <!-- FOOTER -->
 
       <footer>
@@ -147,6 +218,10 @@
             ><a><img src="images/icons/down_icon.png" alt="open more" /></a
           ></span>
         </p>
+        <div class="footer hidden">
+          <img src="images/logos/logo-25.svg" alt="Host Logo">
+          <p class="smallText footerText">2021 Yoga Jam Winter Solstice. Some Rights Reserved.<br>Lorem ipsum dolor sit amet, consectetuer         adipiscing elit. Aenean commodo ligula eget dolor.  Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
+      </div>
       </footer>
     </div>
     <script src="JavScript/script.js"></script>
