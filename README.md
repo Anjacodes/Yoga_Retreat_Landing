@@ -4,9 +4,11 @@
 
 This is an event page to provide information on and promote an upcoming yoga retreat.
 
-<img width="710" alt="Screenshot_mobile_portfolio" src="#">
+<img width="710" alt="Screenshot_mobile" src="images/mobile_screenshot.png">
 
-The website consists of a "home" and an "about" page. 
+<img width="710" alt="Screenshot_desktop" src="images/desktop_screenshot.png">
+
+The website consists of a "home" and an "about" page.
 
 <h2>Built With</h2>
 
