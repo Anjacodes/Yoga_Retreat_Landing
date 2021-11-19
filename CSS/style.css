@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: lato, sans-serif;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -277,10 +278,27 @@ main {
   display: flex;
 }
 
-#teachers > ul > li > img {
+.imgCont {
+  position: relative;
+}
+
+.teacherImage {
   height: 120px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 15px 20px 35px;
+  position: relative;
+}
+
+.backgroundImg {
+  position: absolute;
+  top: -30px;
+  left: 5px;
+}
+
+.separator {
+  height: 2px;
+  background-color: #9d9d9d;
+  border: none;
+  margin: 5px 0;
 }
 
 .teacherCont {
@@ -588,7 +606,6 @@ footer > div {
   #teachers > ul {
     margin-left: 120px;
     margin-right: 120px;
-    margin-bottom: 75px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, auto);

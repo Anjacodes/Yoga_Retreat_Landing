@@ -6,6 +6,8 @@ const mobileMenu = document.querySelector('.mobileMenu');
 const body = document.querySelector('body');
 const mobMenuLinks = document.querySelectorAll('.mobileMenu > ul > li > a');
 const teachersCont = document.getElementById('teachersCont');
+const teachersCont2 = document.getElementById('teachersCont2');
+const more = document.querySelector('.more');
 
 // Add Event Listeners
 
@@ -65,27 +67,47 @@ const teacher4 = {
   description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.',
 };
 
-const teachers = [teacher1, teacher2, teacher3, teacher4];
+const teachers = [teacher1, teacher2];
+const teachers2 = [teacher3, teacher4];
 
 // Function to create HTML
 
-const teachersHtmlTemplate = (obj) => `<img class="teacherImage" src="${obj.image}" alt="${obj.alt}"/>
+const teachersHtmlTemplate = (obj) => `
+<div class="imgCont">
+  <img class="backgroundImg" src="images/icons/grid.png" alt="background icon">
+  <img class="teacherImage" src="${obj.image}" alt="${obj.alt}"/>
+</div>
   <div class="teacherCont">
     <h4 class="teacherName">${obj.name}</h4>
+    <hr class="separator">
     <h5 class="teacherSubtitle">${obj.subtitle}</h5>
     <p class="teacherDescription">${obj.description}</p>
   </div>`;
 
-// Append template
+// make function to generate html
 
-document.addEventListener('DOMContentLoaded', () => {
-  teachers.forEach((teacher) => {
+const loadTeachers = (arr) => {
+  arr.forEach((teacher) => {
     const dinContent = document.createDocumentFragment();
     const newLi = document.createElement('li');
-    // newLi.className = 'works_card';
 
     newLi.innerHTML = teachersHtmlTemplate(teacher);
     dinContent.appendChild(newLi);
     teachersCont.appendChild(dinContent);
   });
+};
+
+// Append template
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth < 768) {
+    loadTeachers(teachers);
+    more.addEventListener('click', () => {
+      loadTeachers(teachers2);
+      more.style.display = 'none';
+    });
+  } else {
+    loadTeachers(teachers);
+    loadTeachers(teachers2);
+  }
 });
